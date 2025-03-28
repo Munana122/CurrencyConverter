@@ -1,12 +1,15 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
+from dotenv import load_dotenv
 import requests
+import os
 
+load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
 
-API_KEY = "b91a78f76c616d979b77f713"
+API_KEY = os.getenv("API_KEY")
 BASE_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/"
 
 def get_exchange_rate(base_currency, target_currency):

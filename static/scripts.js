@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toCurrency = document.getElementById("toCurrency");
 
 
-  const API_URL = "http://0.0.0.0:5000"; // Flask backend
+  const API_URL = ""; // Flask backend address left blank to take the current address
 
   // Populate dropdowns dynamically from the backend
   async function fetchCurrencies() {
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
               toCurrency.add(option2);
           });
 
-          // Set default values
+          
           fromCurrency.value = "USD";
           toCurrency.value = "EUR";
       } catch (error) {
@@ -47,7 +47,7 @@ async function convertCurrency() {
   }
 
   try {
-      const API_URL = "http://0.0.0.0:5000";
+      const API_URL = "";
       const response = await fetch(`${API_URL}/convert?from=${fromCurrency}&to=${toCurrency}&amount=${amount}`);
       const data = await response.json();
 
