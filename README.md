@@ -42,12 +42,18 @@ The application is deployed on **two web servers** with a **load balancer** dist
    pip install -r requirements.txt
    ```
 
-4. **Run the Application:**
+4. **Create .env to store your API Key:**
+   ```sh
+   API_KEY="your_api_key_from Exchange-Rate API"
+   FLASK_ENV=production
+   ```
+
+5. **Run the Application:**
    ```sh
    python3 app.py
    ```
 
-5. **Access the App in Browser:**
+6. **Access the App in Browser:**
    ```
    http://127.0.0.1:5000
    ```
